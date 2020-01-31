@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+	
+	bool flag = true;
+	
+	int input;
+	while(scanf("%d",&input) != EOF){
+		
+		if(flag){
+			printf("PERFECTION OUTPUT\n");
+			flag = false;
+		}
+		
+		int sum = 0;
+		
+		for(int i=1;i<input;i++){
+			if(input%i == 0){
+				sum += i;
+			}
+		}
+		
+		char res[1000];
+		
+		if(sum == input){
+			strcpy(res,"PERFECT");
+		}
+		else if(sum < input){
+			strcpy(res,"DEFICIENT");
+		}
+		else if(sum > input){
+			strcpy(res,"ABUNDANT");
+		}
+		if(input != 0){
+			printf("%5d  %s\n",input,res);
+		}
+		if(input == 0){
+			printf("END OF OUTPUT\n");
+		}
+		
+	}
+	
+	return 0;
+}
